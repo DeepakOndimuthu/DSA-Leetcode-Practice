@@ -1,28 +1,26 @@
-// Last updated: 1/23/2026, 1:54:16 PM
+// Last updated: 1/25/2026, 6:09:51 PM
 1class Solution {
-2    public int[] intersect(int[] nums1, int[] nums2) {
-3         int i =0; int j=0;
-4        Arrays.sort(nums1);
-5        Arrays.sort(nums2);
-6        
-7        List<Integer> result = new ArrayList<>();
-8        while(i < nums1.length && j < nums2.length){
-9            if(nums1[i] == nums2[j]){
-10                result.add(nums1[i]);
-11                i++;
-12                j++;
-13
-14            }else if (nums1[i] < nums2[j]){
-15                i++;
-16            }else{
-17                j++;
-18            }
-19        }
-20        int[] ans = new int[result.size()];
-21        for(int k =0; k< result.size(); k++){
-22            ans[k] = result.get(k);
-23        }
-24        return ans;
-25        
-26    }
-27}
+2    public void merge(int[] nums1, int m, int[] nums2, int n) {
+3        int i = m -1;
+4        int j = n -1;
+5        int k  = m+n -1;
+6
+7        while(i>=0 && j>=0){
+8            if(nums1[i] > nums2[j]){
+9                nums1[k] = nums1[i];
+10                i--;
+11            }else{
+12                nums1[k] = nums2[j];
+13                j--;
+14            }
+15            k--;
+16        }
+17
+18        while(j>=0){
+19            nums1[k] = nums2[j];
+20            j--;
+21            k--;
+22        }
+23        
+24    }
+25}

@@ -1,4 +1,4 @@
-// Last updated: 1/7/2026, 4:53:34 PM
+// Last updated: 1/28/2026, 4:58:19 PM
 1class Solution {
 2    public void reverseString(char[] s) {
 3        int left = 0;

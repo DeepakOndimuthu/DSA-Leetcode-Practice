@@ -1,4 +1,4 @@
-// Last updated: 1/28/2026, 5:20:13 PM
+// Last updated: 2/9/2026, 12:28:58 PM
 1class Solution {
 2    public boolean isPalindrome(String s) {
 3        int left = 0;
@@ -25,3 +25,15 @@
 24        
 25    }
 26}
+27/*
+28Character.isLetterOrDigit(s.charAt(left))
+29true → if character is a-z, A-Z, or 0-9
+30false → if character is space or symbol
+31
+32while concept:
+33Keep moving left pointer until we find a letter or digit.
+34
+35left = 0 → 'A'
+36right = last index → 'a'
+37toLowerCase('A') == toLowerCase('a') ✅
+38*/
